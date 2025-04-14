@@ -19,7 +19,7 @@ function Main({dishes}){
   return (
   <ul>
     {dishes.map((dish) => (
-      <li>{dish}</li>
+      <li Style = {{listStyleType: "none"}}>{dish}</li>
     ))}
   </ul>
 );
