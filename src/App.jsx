@@ -26,19 +26,24 @@ console.log(dishObjects);
 
 function Main({dishes}){
   return (
+    <>
+    <div>
+      <h2>Welcome to this beautiful restaurant!</h2>
+    </div>
     <main>
       <img 
       src={chef} 
       height={200} 
       alt="A photo of a smiling chef owner" 
       />
-  <ul>
-    {dishes.map((dish) => (
-      <li key = {dish.id} style = {{listStyleType: "none"}}>
-        {dish.title}</li>
-    ))}
-  </ul>
+    <ul>
+      {dishes.map((dish) => (
+        <li key = {dish.id} style = {{listStyleType: "none"}}>
+          {dish.title}</li>
+      ))}
+    </ul>
   </main>
+  </>
 );
 }
 
