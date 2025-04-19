@@ -49,12 +49,12 @@ function Main({dishes}){
 }
 
 function App() {
-  const [status, setStatus] = useState("Open");
+  const [status, setStatus] = useState(true);
   return (
     <div>
-      <h1>The restuarant is currently {status}.</h1>
-      <button onClick = {() => setStatus ("Closed")}> 
-        Close Restuarant 
+      <h1>The restuarant is currently {status ? "open" : "Closed"}.</h1>
+      <button onClick = {() => setStatus (! status)}> 
+        {status ? "Close" : "Open"} Restuarant 
       </button>
       <Header name="Alex" year={new Date().getFullYear()} />
       <h2>We serve the most delicious food around</h2>
