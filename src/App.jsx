@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css'
 import chef from "./images/chef.jpg";
 
@@ -48,9 +49,14 @@ function Main({dishes}){
 }
 
 function App() {
+  const [status, setStatus] = useState("Open");
   return (
     <div>
-    <Header name="Alex" year={new Date().getFullYear()} />
+      <h1>The restuarant is currently {status}.</h1>
+      <button onClick = {() => setStatus ("Closed")}> 
+        Close Restuarant 
+      </button>
+      <Header name="Alex" year={new Date().getFullYear()} />
       <h2>We serve the most delicious food around</h2>
     <Main dishes={dishObjects} />
     </div>
