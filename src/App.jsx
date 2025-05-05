@@ -25,10 +25,13 @@ const dishObjects = items.map((dish, i) => ({
 
 console.log(dishObjects);
 
-function Main({dishes, openStatus}){
+function Main({dishes, openStatus, onStatus}){
   return (
     <>
     <div>
+    <button onClick={() => onStatus(true)}>
+      I want to be open
+      </button>
       <h2>Welcome to this beautiful restaurant! {""}
         {openStatus ? "We are open!" : "We are closed!"}
       </h2>
@@ -62,7 +65,11 @@ function App() {
       </button>
       <Header name="Alex" year={new Date().getFullYear()} />
       <h2>We serve the most delicious food around</h2>
-    <Main dishes={dishObjects} openStatus = {status} />
+    <Main 
+    dishes={dishObjects} 
+    openStatus = {status}
+    onStatus = {setStatus} 
+    />
     </div>
   )
 }
