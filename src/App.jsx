@@ -25,11 +25,13 @@ const dishObjects = items.map((dish, i) => ({
 
 console.log(dishObjects);
 
-function Main({dishes}){
+function Main({dishes, openStatus}){
   return (
     <>
     <div>
-      <h2>Welcome to this beautiful restaurant!</h2>
+      <h2>Welcome to this beautiful restaurant! {""}
+        {openStatus ? "We are open!" : "We are closed!"}
+      </h2>
     </div>
     <main>
       <img 
@@ -60,7 +62,7 @@ function App() {
       </button>
       <Header name="Alex" year={new Date().getFullYear()} />
       <h2>We serve the most delicious food around</h2>
-    <Main dishes={dishObjects} />
+    <Main dishes={dishObjects} openStatus = {status} />
     </div>
   )
 }
